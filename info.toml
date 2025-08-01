@@ -1,0 +1,9 @@
+id = "example"
+version = "1.0.0"
+displayName = "Example Extension"
+description = "This is an example extension."
+icon = "icon.png"
+author = "Author Name"
+minGameVersion = "1.6.0"
+mainClass = "example.Main"
+supportedPlatforms = ["android", "desktop"]
