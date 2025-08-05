@@ -6,18 +6,17 @@
 
 ## 为桌面构建 Jar
 1. 安装 JDK 17 或更高版本.
-2. 通常情况下需要在`build.gradle.kts`中重新设置需要的`rwppVersion`
-3. 运行 `gradlew jar`.
-4. 构建的 JAR 文件位于 `build/libs` 目录下.
+2. 运行 `gradlew jar`. 
+3. 构建的 JAR 文件位于 `build/libs` 目录下.
 
 ## 构建全平台 Jar
 1. 安装 JDK 17 或更高版本.
 2. 安装`Android Sdk` 并正确设置环境变量(`ANDROID_HOME`). 构建此项目所需的`build-tools`版本至少应为`36.0.0`.
-3. 在`build.gradle.kts`中重新设置需要的`rwppVersion`和`build-tools`版本.
+3. 在`gradle.properties`中重新设置需要的`build-tools`版本.
 4. 运行 `gradlew deploy`.
 5. 构建的 JAR 文件位于 `build/libs` 目录下.
 
 ## 可能遇到的问题
-1. 可能在构建时遇见找不到 Jar 的错误，可尝试删除`build/libs`后重试
+1. 可能在构建时遇见找不到 Jar 的错误，可尝试运行`gradlew clean`清理缓存后再次运行
 2. Dex 编译失败，可能是因为没有安装`Android Sdk`或`build-tools`版本太低，可尝试重新安装`Android Sdk`或更新`build-tools`版本
 3. gradle脚本有时可能抽风全红，重载一下或许可以解决

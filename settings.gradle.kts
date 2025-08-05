@@ -1,5 +1,9 @@
-
 rootProject.name = "ExampleJvmExtension"
+
+
+include(":common")
+include(":android")
+include(":desktop")
 
 pluginManagement {
     repositories {
@@ -9,11 +13,13 @@ pluginManagement {
     }
 
     plugins {
-        val kotlinVersion = "2.1.20"
+        val kotlinVersion = extra["kotlin.version"] as String
+        val kspVersion = extra["ksp.version"] as String
         kotlin("jvm") version kotlinVersion
         kotlin("plugin.serialization") version kotlinVersion
         id("org.jetbrains.compose") version "1.8.2"
         id("org.jetbrains.kotlin.plugin.compose") version kotlinVersion
+        id("com.google.devtools.ksp") version kspVersion
     }
 }
 
@@ -29,4 +35,3 @@ dependencyResolutionManagement {
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
-

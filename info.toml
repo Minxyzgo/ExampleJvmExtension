@@ -6,4 +6,5 @@ icon = "icon.png"
 author = "Author Name"
 minGameVersion = "1.6.0"
 mainClass = "example.Main"
+hasInjectInfo = true
 supportedPlatforms = ["android", "desktop"]
