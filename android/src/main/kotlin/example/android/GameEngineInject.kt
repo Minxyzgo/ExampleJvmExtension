@@ -20,7 +20,7 @@ object GameEngineInject {
     @Inject("a", InjectMode.InsertBefore)
     // 任何InsertBefore模式的注入必须返回Any?或者不返回，不返回默认方法会继续执行
     fun showBriefing(str: String, bu: com.corrodinggames.rts.game.units.custom.bu): Any? {
-        return if (Main.config.showBriefing && str == "Briefing") {
+        return if (!Main.config.showBriefing && str == "Briefing") {
             InterruptResult() // InterruptResult 表示中断方法执行，并返回指定结果
         } else {
             Unit // Unit 表示方法继续执行
